@@ -1,0 +1,32 @@
+//
+   Created by developer community on 30/04/2016.
+extends default_layout
+block content
+    ul(class="list-post")
+            li
+                a(href="/profil/" + posts.user._id)
+                    img(class="profil_pic round" alt="" src="#{posts.user.profil_pic}")
+                p(class="contenu_detail")
+                    small #{posts.user.pseudo + ' ' + posts.time + ' ,' + posts.date + '  '}
+                    h4 #{posts.object}
+                a(href="/processlike/"+posts._id+'/'+posts.like)
+                    span(class="btn-like glyphicon glyphicon-hand-right")
+                        span(class="badge") #{posts.like}
+                span(class="btn-restore glyphicon glyphicon-minus")
+                span(class="btn-comment glyphicon glyphicon-comment")
+                    span(class="badge") #{posts.comment}
+    ul(class="list-comment")
+        for comments in comment
+            li
+                a(href="/profil/" + comments.user._id)
+                    img(class="profil_pic round" alt="" src="#{comments.user.profil_pic}")
+                p(class="contenu_detail")
+                    small #{comments.user.pseudo+' '+comments.time+' ,'+ comments.date+'  '}
+                    h4 #{comments.object}
+    div(id="comment-container")
+        form(method="POST" action="/processcomment")
+            div(class="input-group")
+                span(class="input-group-addon  glyphicon glyphicon-user" id="basic-addon1")
+                textarea(class="form-control" placeholder="Commentaire" aria-describedby="basic-addon1" name="content_comment" focus)
+                input(type="hidden" name="post_id" value="#{posts._id}")
+            button(class="btn btn-primary" type="submit") Commneter

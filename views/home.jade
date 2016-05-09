@@ -1,0 +1,24 @@
+extends default_layout
+block content
+	div(id="form-post")
+		form(method="POST" id="form-post-form" action="/processpost" )
+			div(class="form-group")
+				textarea(class="form-control" placeholder="Quoi de neuf amigo" id="content-post" name="postcontent" )
+				button(type="submit" class="btn btn-success  glyphicon glyphicon-log-in") &nbspPoster
+				//input(type="file" class="hidden" name="file" id="file")
+				//label(class="btn glyphicon glyphicon-paperclip" for="file") &nbsp
+		ul(class="list-post")
+			for posts in post
+				li
+					a(href="/profil/"+posts.user._id)
+						img(class="profil_pic round" alt="" src="#{posts.user.profil_pic}")
+					p(class="contenu_detail")
+						small #{posts.user.pseudo+ ' '+posts.time+' ,'+posts.date+'  '}  
+						h4 #{posts.object} 
+					a(href="/processlike/"+posts._id+'/'+posts.like)
+						span(class="btn-like glyphicon glyphicon-hand-right")
+						if posts.like!=0
+							span(class="badge") #{posts.like}  		
+					a(href="/comment/"+posts._id)
+						span(class="btn-comment glyphicon glyphicon-comment")
+							span(class="badge") #{posts.comment}

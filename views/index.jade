@@ -1,0 +1,57 @@
+doctype html
+html
+	head
+		title Voromahery
+		meta(charset="utf-8")
+		link(rel="icon" type="image/png" href="/layout/img/logo.png")
+		link(rel="stylesheet" type="text/css" href="/bootstrap-3.3.6-dist/css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css")
+		link(rel="stylesheet" type="text/css" href="/layout/css/main.css")
+	body
+		center
+			img(class="navbar-brand logo index-logo" src="/layout/img/logo.png")
+		div(id="contenu" class="round")
+			div(id="container-index")
+				h2(id="welcome") Bienvenu sur Voromahery
+				div(id="form-singin")
+					form(method="POST" id="form-singin-form" action="/identication")
+						div(class="form-group")
+							label(for="user_email") Email:
+							input(type="email" class="form-control" placeholder="exemple@mail.com" id="user_email" name="user_email" required)
+							label(for="user_password") Mot de passe:
+							input(type="password" class="form-control" placeholder="User Name" id="user_password" name="user_password" required)
+							button(type="submit" class="btn btn-success  glyphicon glyphicon-log-in") &nbspConnecter
+							em(class="btn btn-primary glyphicon glyphicon-floppy-save" id="btn-singup") &nbspInscription
+					h6(style="color:red;") #{error}
+
+					form(method="POST" id="form-singup" action="/singup")
+						div(class="form-group")
+							label(for="user_pseudo") Pseudo:
+							input(type="text" class="form-control" placeholder="Pseudo" id="user_pseudo" name="user_pseudo" required)
+							label(for="user_name") Nom :
+							input(type="text" class="form-control" placeholder="Nom" id="user_name" name="user_name" required)
+							label(for="user_lname") Prenom :
+							input(type="text" class="form-control" placeholder="Prenom" id="user_lname" name="user_lname" required)
+							label(for="user_email") Email:
+							input(type="email" class="form-control" placeholder="exemple@mail.com" id="user_email" name="user_email" required)
+							label(for="user_taf") Travail :
+							input(type="text" class="form-control" placeholder="Travail" id="user_taf" name="user_taf" required)
+							label(for="user_sexe") Sexe:
+							select(class="form-control" id="user_sexe" name="user_sexe" required)
+								option(value="homme") Homme
+								option(value="femme") Femme
+							label(for="user_city") Ville:
+							select(class="form-control" id="user_city" name="user_city" required)
+								option(value="antsirabe") antsirabe
+								option(value="Antananrivo") Antananrivo
+							label(for="user_password") Mot de passe:
+							input(type="password" class="form-control" placeholder="mot de passe" id="user_password" name="user_password" required)
+							label(for="user_password_confirm") Confirmer mot de passe:
+							input(type="password" class="form-control" placeholder="confirm mot de passe" id="user_password_confirm" name="user_password_confirm" required)
+							br
+							button(type="submit" class="btn btn-success glyphicon glyphicon-floppy-save" id="btn-singup-ok") &nbspInscrire
+							button(type="reset" class="btn btn-primary glyphicon glyphicon-refresh") &nbspRefresh
+							em(class="btn btn-danger  glyphicon glyphicon-remove" id="btn-singup-back") &nbspAnnuler
+		script(type="text/javascript" src="/bootstrap-3.3.6-dist/js/jquery-2.1.3.min.js")
+		script(type="text/javascript" src="/bootstrap-3.3.6-dist/js/bootstrap.min.js")
+		script(type="text/javascript" src="/layout/js/main.js")

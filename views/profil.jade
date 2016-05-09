@@ -1,0 +1,48 @@
+extends default_layout
+block content
+	div(style="background:url('#{all_user.cover}') fixed center no-repeat;min-height:380px;" class="round")
+		ul(class="profil-head")
+			li
+				img(class="profil_pic round" alt="profil picture" src="#{all_user.profil_pic}")
+				p(class="contenu_detail") #{all_user.name+' '+ all_user.lname+"   "}
+					if all_user.email!=user.email 
+						if friend!==true
+							a(href="/processaddfriend/" + all_user._id)
+								span(class="glyphicon glyphicon-user btn-add-contact")
+									span(class="glyphicon glyphicon-plus")
+					br
+					em dit: #{all_user.pseudo}
+					if all_user.email==user.email  
+						br
+						form(method="post" action="/processchangeprofilpic" enctype="multipart/form-data")
+							input(type="file" name="profil_pic" class="hidden" id="profil_pic" required)
+							label(for="profil_pic" class="glyphicon glyphicon-picture") 
+							small
+								input(type="submit" value="Changer Profil")
+						br  
+						form(method="post" action="/processchangecover" enctype="multipart/form-data")
+							input(type="file" name="cover" class="hidden" id="cover" required)
+							label(for="cover" class="glyphicon glyphicon-picture") 
+							small
+								input(type="submit" value="Changer Cover")
+		div(class="profil-detail round")
+			table
+				tr
+					td Nom 
+					td : #{all_user.name}
+				tr
+					td Email 
+					td : #{all_user.email}
+						
+				tr
+					td Prenom
+					td : #{all_user.lname}
+				tr
+					td Ville
+					td : #{all_user.city}
+				tr
+					td Travail
+					td : #{all_user.taf}
+				tr
+					td Sexe 
+					td : #{all_user.sexe}

@@ -1,0 +1,28 @@
+//
+   Created by developer community on 30/04/2016.
+
+extends default_layout
+block content
+    ul(class="list-msg")
+        for message in messages
+            if message.sender!=user._id
+                li
+                    a(href="/profil/" + message.sender)
+                        img(class="profil_pic round" alt="" src="#{other.profil_pic}")
+                    p(class="contenu_detail")
+                        small  #{other.pseudo + ' ' + message.time + ' ,' + message.date + '  '}
+                        h4  #{message.object}
+                        span(class="btn-call glyphicon glyphicon-facetime-video") &nbsp
+            else
+                li
+                    a(href="/profil/" + message.sender)
+                        img(class="profil_pic round" alt="" src="#{user.profil_pic}")
+                    p(class="contenu_detail")
+                        small  #{user.pseudo + ' ' + message.time + ' ,' + message.date + '  '}
+                        h4  #{message.object}
+    div(id="form-post-msg")
+        form(method="POST" action="/processmsg")
+            div(class="input-group")
+                input(class="form-control destination hidden" type="email" placeholder="Destinateur" name="destination" value="#{other.email}")
+                textarea(class="form-control" placeholder="messages" aria-describedby="basic-addon1" name="msg_content" autofocus)
+            button(class="btn btn-primary" type="submit") Envoi

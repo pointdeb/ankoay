@@ -1,0 +1,355 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 mars 2016, 13:46:58
+    Author     : developer community
+*/
+body,.my-title,.ui-dialog-titlebar{
+    background: #009688;
+    border: 0;
+}
+body{
+    padding-top: 20px;
+    color:#fff;
+    font-family: 'Creepster',cursive;
+}
+a{
+    text-decoration: none;
+    color: white;
+    z-index: 3;
+}
+em{
+    font-style: normal;
+}
+section .contenu{
+    background: #263238;
+    background: rgba(240,240,240,0.95);
+    padding: 10px 5px 0px 5px;
+    min-height: 515px;
+}
+.contenu-slide {
+    overflow: auto;
+    height: 500px;
+}
+.classic{
+    color: white;
+}
+blockquote{
+    background: rgba(25,25,25,0.4);
+    min-height: 200px;
+    cursor: pointer;
+}
+blockquote:hover{
+    background: rgba(25,25,25,0.5);
+}
+blockquote footer{
+    color: white;
+}
+.btn-success{
+    background: green;
+}
+.my-caption{
+    position: fixed;
+    bottom: 10px;
+    height: 40px;
+}
+/* --------------------------------------------------debut header---------------------------------------------*/
+header .sous-titre{
+    font-size: 15px;
+    position: relative;
+    top:20px;
+}
+.logo{
+    width: 90px;
+    height: 90px;
+    border-radius:50%;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    z-index: 1;
+}
+.index-logo{
+    position: relative;
+    text-align: center;
+    left: 45%;
+    top: 20px;
+    border-bottom: 1px solid white;
+}
+.profil-pic-icon{
+    width: 90px;
+    height: 90px;
+    border-radius:50%;
+    position: absolute;
+    top: -10px;
+    right: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
+span.glyphicon-log-out{
+    position: absolute;
+    right: 120px;
+}
+.no-visible{
+    display: none;
+}
+.visible{
+    display: inline;
+}
+.search{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+/* --------------------------------------------------fin header---------------------------------------------*/
+/* --------------------------------------------------debut menu---------------------------------------------*/
+
+#m-p{
+    max-width: 1110px;
+    padding: 0px;
+    margin: 0 auto;
+    position: relative;
+}
+.menu-h-lp{
+    font-size: 20px;
+    font-family:Brush Script MT ;
+    min-width: 175px;
+    height:45px;
+    overflow: hidden;
+    cursor:pointer;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+.menu-h-lp:hover {
+    height: 44px;
+    border-bottom: solid 5px cadetblue;
+}
+#menu-h-s{
+    display: block;
+    padding: 0px;
+    position: absolute;
+    font-family: fantasy;
+    font-size: 15px;
+    text-align: left;
+    width: 170px;
+    z-index: 1;
+}
+#menu-h-s li:hover{
+    background: rgba(9,119,67,0.5);
+    margin-bottom: 0.5px;
+}
+.menu-h-lp:hover #menu-h-s {
+    display: inline;
+}
+.menu-h-ls:hover #menu-h-ss {
+    display: block;
+}
+#menu-h-ss{
+    display: none;
+    padding: 0px;
+    position: absolute;
+    font-family: fantasy;
+    font-size: 15px;
+    list-style: none;
+    text-align: left;
+    width: 170px;
+    left: 160px;
+    background: black;
+}
+#u-navbar{
+    background: rgba(25,25,25,0.9);
+}
+/* --------------------------------------------------fin menu---------------------------------------------*/
+/* --------------------------------------------------debut conternu---------------------------------------------*/
+#contenu{
+    background: #263238;
+    max-width: 1039px;
+    min-height:380px;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 80px;
+    margin-bottom: 5px;
+}
+.my-title{
+    position: fixed;
+    z-index: 2;
+    width: 90%;
+    margin-top:30px;
+    max-height: 40px;
+    border-bottom: 1px solid white;
+}
+.round{
+    border-radius: 5px;
+}
+.circle{
+    border-radius: 50%;
+}
+/* -------------fin conternu----------------------------------------------------*/
+#container{
+    min-height: 400px;
+    display: block;
+}
+
+#container-index{
+    display: block;
+}
+
+#video-p{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+}
+#video-s,#preview{
+    width: 100px;
+    height: 80px;
+    z-index: 1;
+    float: right;
+    border: solid #fff 1px;
+    background: #333;
+    position: absolute;
+    left: 0;
+}
+
+#video-container{
+    width: 100%;
+    height: 100%;
+    background: #333;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+#comment-container,#form-post-msg{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.btn-end-call,.btn-call,.btn-comment,.btn-like,.btn-restore,.btn-new-msg,.btn-msg,.btn-add-contact,.edit{ 
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.btn{
+    border: 0;
+}
+.btn-new-msg{
+    position: absolute;
+    right: 100px;
+    color: white;
+}
+#comment-container .input-group, #form-post-msg .input-group{
+    width: 100%;
+    padding-left: 2px;
+}
+#send{
+    cursor: pointer;
+}
+
+#form-singin{
+    width: 450px;
+    position: relative;
+    margin: 0 auto;
+}
+#form-singin button{
+    position: relative;
+    margin: 4px;
+}
+#welcome{
+    text-align: center;
+}
+.profil_pic{
+    width: 90px;
+    height: 90px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    margin-right: 15px;
+}
+.profil-head .profil_pic{
+    width: 120px;
+    height: 120px;
+}
+.list-post,.list-msg,.profil-head{
+    padding: 2px 0px 0px 5px;
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+}
+.list-post li, .list-msg li,.list-comment li{
+    min-height: 95px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+li{
+    list-style: none;
+}
+.list-comment,.list-msg-p{
+    width: 80%;
+    min-height: 95px;
+    padding: 2px 0px 0px 5px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background: rgba(100,100,100,0.2);
+}
+.hightlight{
+    color: blue;
+}
+#video-call-container{
+    background: transparent;
+    width: 450px;
+    height: 350px;
+    display: block;
+    border: 1px solid white;
+    z-index: 2;
+}
+
+.profil-detail td:not(.edit){
+    width: 400px;
+}
+.profil-detail tr td:first-child{
+    width: 100px;
+}
+.profil-detail table{
+    text-align: left;
+    top: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+.profil-detail{
+    text-align: center;
+    max-width: 90%;
+    min-height: 200px;
+    margin: 0 auto;
+    background: rgba(25,25,25,0.8);
+    margin-top: 10px;
+}
+.profil-head{
+    background: rgba(0,0,0,0.4);
+}
+.badge{
+    margin-right: 9px;
+    margin-left:-5px; 
+}
+.search input[type=text]{
+    border: 0;
+    background: rgba(255,255,255,0.8);
+    height: 32px;
+    border-radius: 0;
+}
+.search{
+    max-width: 250px;
+}
+.zebra_odd{
+    background: #757575;
+}
+.zebra_even{
+    background: gray;
+}
+
+.profil-head form input[type=submit]{
+    border: 0;
+    background: transparent;
+}

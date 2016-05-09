@@ -1,0 +1,9 @@
+extends default_layout
+block content
+	button(onclick="getCall()" class="btn btn-success") GetCall
+	input(type="text" id="roomName" value="#{roomName}")
+	div(id="video-container")
+		canvas(id="preview" class="round")
+		img(id="video-getcall"  class="round")
+		div#logger
+script(type="text/javascript" src="/layout/js/sendvideo.js")

@@ -1,0 +1,9 @@
+extends default_layout
+block content
+	button(onclick="startCall()" class="btn btn-success") Start
+	input(type="text" id="roomName" value="#{roomName}")
+	div(id="video-container")
+		video(id="video-p" class="round" autoplay)
+		canvas#preview
+		div#logger
+script(type="text/javascript" src="/layout/js/sendvideo.js")

@@ -1,0 +1,37 @@
+extends default_layout
+block content
+	ul(class="list-post")
+		for friend in friends
+			if friend.user_sender.email!=user.email
+				li
+					a(href="/profil/" + friend.user_sender._id)
+						img(class="profil_pic round" alt="" src="#{friend.user_sender.profil_pic}")
+					p(class="contenu_detail") #{friend.user_sender.pseudo}
+						br
+						em #{friend.user_sender.city}
+						br
+						em #{friend.user_sender.sexe}
+						br
+						em #{friend.user_sender.taf}
+					if friend.stat==0
+						a(href="/processacceptfriend/" + friend.user_sender._id)
+							span(class="glyphicon glyphicon-user btn-add-contact")
+								span(class="glyphicon glyphicon-ok")
+					else
+						a(href="/processremovefriend/" + friend.user_sender._id)
+							span(class="glyphicon glyphicon-user btn-add-contact")
+								span(class="glyphicon glyphicon-minus")
+			else
+				li
+					a(href="/profil/" + friend.user_asked._id)
+						img(class="profil_pic round" alt="" src="#{friend.user_asked.profil_pic}")
+					p(class="contenu_detail") #{friend.user_asked.pseudo}
+						br
+						em #{friend.user_asked.city}
+						br
+						em #{friend.user_asked.sexe}
+						br
+						em #{friend.user_asked.taf}
+					a(href="/processremovefriend/" + friend.user_asked._id)
+						span(class="glyphicon glyphicon-user btn-add-contact")
+							span(class="glyphicon glyphicon-minus")

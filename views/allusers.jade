@@ -1,0 +1,19 @@
+//
+   Created by developer community on 30/04/2016.
+extends default_layout
+block content
+    ul(class="list-post")
+        for userss in users
+            li
+                a(href="/profil/" + userss.id)
+                    img(class="profil_pic round" alt="" src="#{userss.profil_pic}")
+                p(class="contenu_detail") #{userss.pseudo}
+                    br
+                    em #{userss.city}
+                    br
+                    em #{userss.sexe}
+                    br
+                    em #{userss.taf}
+                a(href="/processaddfriend/" + userss._id)
+                    span(class="glyphicon glyphicon-user btn-add-contact")
+                        span(class="glyphicon glyphicon-plus")

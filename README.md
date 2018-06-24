@@ -14,6 +14,7 @@ Please install mongodb [here](https://www.mongodb.com/download-center#community)
 ## Run other terminal
 \* each command in different terminal separately
 > mongod --port 27017 --dbpath ./data
+
 > node app.js
 
 ## Screenshot
